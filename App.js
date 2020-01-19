@@ -1,19 +1,35 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator} from 'react-navigation-stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+import MainScreen from './screens/Main'
+import BabyScreen from './screens/Baby'
+import BowlingScreen from './screens/Bowling'
+
+const StackNav = createStackNavigator(
+    {
+        Bowling: BowlingScreen,
+        Baby: BabyScreen,
+        Main: {
+            screen: MainScreen,
+            navigationOptions: {
+                headerShown: false,
+                title: "Activité"
+            },
+        },
+    },
+    {
+      initialRouteName: 'Main',
+    }
+);
+
+const StackNavContainer = createAppContainer(StackNav);
+
+export default class App extends React.Component {
+  render() {
+    return (
+        <StackNavContainer />
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
