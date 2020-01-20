@@ -1,16 +1,15 @@
 import React from 'react';
-import {Text, View, Button, StatusBar, IconComponent} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { Icon } from 'react-native-elements'
 
 import MatchList from '../components/Baby/MatchList'
-import SquadList from '../components/Baby/Squads'
+
+import StackNav from "./BabyNav";
 
 const TabNavigator = createBottomTabNavigator(
     {
         Home:  {
-            screen: SquadList
+            screen: StackNav
         },
         MatchList: {
             screen: MatchList,
