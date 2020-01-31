@@ -3,11 +3,11 @@ import {Text, View, Button, FlatList, TouchableHighlight, ScrollView} from 'reac
 import { Icon, ListItem } from 'react-native-elements'
 import { ListView } from 'react-native-elements'
 
-export default class Squads extends React.Component {
+export default class Solo extends React.Component {
     static navigationOptions = {
         headerShown: false,
         tabBarIcon: ({tintColor}) => (
-            <Icon name='gamepad'
+            <Icon name='user'
                   type='font-awesome'
                   color={tintColor}/>
         )
@@ -25,16 +25,10 @@ export default class Squads extends React.Component {
             }}
 
           data={[
-            {key: 'Devin'},
-            {key: 'Dan'},
-            {key: 'Dominic'},
-            {key: 'Jackson'},
-            {key: 'James'},
-            {key: 'Joel'},
-            {key: 'John'},
-            {key: 'Jillian'},
-            {key: 'Jimmy'},
-            {key: 'Julie'},
+            {key: 'Ottavio'},
+            {key: 'Ronaldo'},
+            {key: 'Julien'},
+            {key: 'Cristiano'},
           ]}
           numColumns={2}
           renderItem={({item}) => <View
@@ -47,7 +41,7 @@ export default class Squads extends React.Component {
           }}>
           <TouchableHighlight
               style={{ width: 150, height: 150, backgroundColor: 'skyblue', margin: 10, justifyContent: 'center', alignItems: "center", borderRadius: 75}}
-              onPress={() => {this.props.navigation.navigate('Stats')}}>
+              onPress={() => {this.props.navigation.navigate('SoloStats')}}>
               <Text>{item.key}</Text>
           </TouchableHighlight>
             </View>

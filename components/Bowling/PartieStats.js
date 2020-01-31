@@ -3,10 +3,9 @@ import * as React from 'react';
 import { FlatGrid } from 'react-native-super-grid';
 import {Icon, Card} from "react-native-elements";
 
-export default class Main extends React.Component {
+export default class StatsBowlingSolo extends React.Component {
     static navigationOptions = {
-        headerShown: false,
-        title: "Équipes"
+        headerShown: false
     };
 
     render() {
@@ -14,36 +13,27 @@ export default class Main extends React.Component {
             <React.Fragment>
                 <ScrollView style={{flex: 1}}>
                     <View style={{flex: 1}}>
-                        <View style={style.imageContainer}>
-                            <Image source={require('../assets/img/bg.jpg')} style={style.profileImage}/>
-                        </View>
                         <View style={style.card}>
                             <View style={{flex: 1,}}>
                                 <View style={{width: '100%', borderBottomColor: 'lightgray', borderBottomWidth: 0.2}}>
-                                    <Text style={style.title}>Equipe 1</Text>
-                                </View>
-                                <View style={style.subtitle}>
-                                    <Text style={style.subtitle}>Statistiques</Text>
+                                    <Text style={style.title}>N˚10</Text>
+                                    <Text style={style.date}>26.01.2020</Text>
                                 </View>
                                 <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Matchs joués :</Text>
-                                    <Text style={style.statsNumbers}>10</Text>
+                                    <Text style={style.stats}>1ère place :</Text>
+                                    <Text style={style.statsNumbers}>Ottavio</Text>
                                 </View>
                                 <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Matchs perdus :</Text>
-                                    <Text style={style.statsNumbers}>6</Text>
+                                    <Text style={style.stats}>2ème place :</Text>
+                                    <Text style={style.statsNumbers}>Ronaldo</Text>
                                 </View>
                                 <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Matchs gagnés :</Text>
-                                    <Text style={style.statsNumbers}>4</Text>
+                                    <Text style={style.stats}>3ème place :</Text>
+                                    <Text style={style.statsNumbers}>Cristiano</Text>
                                 </View>
                                 <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Meilleur score :</Text>
-                                    <Text style={style.statsNumbers}>10 - 3</Text>
-                                </View>
-                                <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Ratio (g/p) :</Text>
-                                    <Text style={style.statsNumbers}>0.33</Text>
+                                    <Text style={style.stats}>4ème place :</Text>
+                                    <Text style={style.statsNumbers}>Julien</Text>
                                 </View>
                             </View>
                         </View>
@@ -72,7 +62,7 @@ const style = StyleSheet.create({
         backgroundColor: "white",
         marginLeft: 20,
         marginRight: 20,
-        marginTop: 125,
+        marginTop: 20,
         borderTopLeftRadius: 5,
         borderTopRightRadius: 5,
         shadowColor: "#000",
@@ -89,7 +79,14 @@ const style = StyleSheet.create({
         flex: 1,
         fontSize: 36,
         alignItems: 'center',
-        marginTop: 75,
+        marginTop: 10,
+        marginBottom: 10,
+        textAlign: "center",
+    },
+    date: {
+        flex: 1,
+        fontSize: 24,
+        alignItems: 'center',
         marginBottom: 10,
         textAlign: "center",
     },

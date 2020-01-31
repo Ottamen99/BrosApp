@@ -1,19 +1,53 @@
-import { Button, View, Text } from 'react-native';
 import React from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { Icon, ListItem } from 'react-native-elements'
 
-export default class Bowling extends React.Component {
-    static navigationOptions = {
-        title: 'Welcome to the app!',
-    };
+import Solo from '../components/Bowling/Solo'
+import Duo from '../components/Bowling/Duo'
+import PartiesStackNav from './Navigators/BowlingPartiesNav'
 
-    render() {
-        return (
-            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text>Bowling Screen</Text>
-                <Button title="Go to Main"
-                        onPress={() => this.props.navigation.navigate('Main')}
-                />
-            </View>
-        );
+import StackNavSolo from "./Navigators/BowlingNavSolo";
+
+const TabNavigator = createBottomTabNavigator(
+    {
+        Solo:  {
+            screen: StackNavSolo,
+            navigationOptions: () => ({
+                headerShown: false,
+                title: 'Solo',
+                tabBarIcon: ({tintColor}) => (
+                    <Icon name='user'
+                          type='font-awesome'
+                          color={tintColor}/>
+                )
+              })
+        },
+        Duo: {
+            screen: Duo,
+        },
+        Parties: {
+            screen: PartiesStackNav,
+            navigationOptions: () => ({
+                headerShown: false,
+                title: 'Parties',
+                tabBarIcon: ({tintColor}) => (
+                    <Icon name='bowling'
+                          type='material-community'
+                          color={tintColor}/>
+                )
+              })
+        }
+        /*Archivements: {
+            screen: Archivements,
+        },*/
+    },
+    {
+        tabBarOptions: {
+            activeTintColor: 'tomato',
+            inactiveTintColor: 'gray',
+        },
     }
-}
+);
+
+export default createAppContainer(TabNavigator);

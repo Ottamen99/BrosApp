@@ -7,7 +7,7 @@ export default class Squads extends React.Component {
     static navigationOptions = {
         headerShown: false,
         tabBarIcon: ({tintColor}) => (
-            <Icon name='gamepad'
+            <Icon name='users'
                   type='font-awesome'
                   color={tintColor}/>
         )
@@ -25,16 +25,8 @@ export default class Squads extends React.Component {
             }}
 
           data={[
-            {key: 'Devin'},
-            {key: 'Dan'},
-            {key: 'Dominic'},
-            {key: 'Jackson'},
-            {key: 'James'},
-            {key: 'Joel'},
-            {key: 'John'},
-            {key: 'Jillian'},
-            {key: 'Jimmy'},
-            {key: 'Julie'},
+            {key: 'Team1'},
+            {key: 'Team2'}
           ]}
           numColumns={2}
           renderItem={({item}) => <View

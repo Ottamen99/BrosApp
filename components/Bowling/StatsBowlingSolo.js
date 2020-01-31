@@ -3,10 +3,9 @@ import * as React from 'react';
 import { FlatGrid } from 'react-native-super-grid';
 import {Icon, Card} from "react-native-elements";
 
-export default class Main extends React.Component {
+export default class StatsBowlingSolo extends React.Component {
     static navigationOptions = {
-        headerShown: false,
-        title: "Équipes"
+        headerShown: false
     };
 
     render() {
@@ -15,35 +14,31 @@ export default class Main extends React.Component {
                 <ScrollView style={{flex: 1}}>
                     <View style={{flex: 1}}>
                         <View style={style.imageContainer}>
-                            <Image source={require('../assets/img/bg.jpg')} style={style.profileImage}/>
+                            <Image source={require('../../assets/img/bg.jpg')} style={style.profileImage}/>
                         </View>
                         <View style={style.card}>
                             <View style={{flex: 1,}}>
                                 <View style={{width: '100%', borderBottomColor: 'lightgray', borderBottomWidth: 0.2}}>
-                                    <Text style={style.title}>Equipe 1</Text>
+                                    <Text style={style.title}>Ottavio</Text>
                                 </View>
                                 <View style={style.subtitle}>
                                     <Text style={style.subtitle}>Statistiques</Text>
                                 </View>
                                 <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Matchs joués :</Text>
+                                    <Text style={style.stats}>Parties jouées :</Text>
                                     <Text style={style.statsNumbers}>10</Text>
                                 </View>
                                 <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Matchs perdus :</Text>
-                                    <Text style={style.statsNumbers}>6</Text>
-                                </View>
-                                <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Matchs gagnés :</Text>
-                                    <Text style={style.statsNumbers}>4</Text>
-                                </View>
-                                <View style={style.statsContainer}>
                                     <Text style={style.stats}>Meilleur score :</Text>
-                                    <Text style={style.statsNumbers}>10 - 3</Text>
+                                    <Text style={style.statsNumbers}>199</Text>
                                 </View>
                                 <View style={style.statsContainer}>
-                                    <Text style={style.stats}>Ratio (g/p) :</Text>
-                                    <Text style={style.statsNumbers}>0.33</Text>
+                                    <Text style={style.stats}>Moyenne pts :</Text>
+                                    <Text style={style.statsNumbers}>121</Text>
+                                </View>
+                                <View style={style.statsContainer}>
+                                    <Text style={style.stats}>Boule préférée: </Text>
+                                    <Text style={style.statsNumbers}>11</Text>
                                 </View>
                             </View>
                         </View>
